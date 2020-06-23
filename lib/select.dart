@@ -1,3 +1,4 @@
+import 'package:al_quran/surahMenu.dart';
 import 'package:flutter/material.dart';
 
 class Select extends StatefulWidget {
@@ -21,7 +22,7 @@ class SelectState extends State<Select> {
           Text(_selectLanguage == "Indonesia"
               ? "Kamu memilih Bahasa Indonesia"
               : "You Choose English Language"),
-          nextButton()
+          bacaButton()
         ],
       ),
     ));
@@ -49,15 +50,21 @@ class SelectState extends State<Select> {
         }).toList());
   }
 
-  Widget nextButton() {
+  Widget bacaButton() {
     return Container(
       margin: EdgeInsets.only(top: 25),
       child: SizedBox(
         width: MediaQuery.of(context).size.width * 0.5,
         child: RaisedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        SurahMenu(language: _selectLanguage)));
+          },
           child: Text(
-            _selectLanguage == "Indonesia" ? "Lanjutkan" : "Next",
+            _selectLanguage == "Indonesia" ? "Baca Surat" : "Read Surah",
             style: TextStyle(color: Colors.white),
           ),
           color: Colors.blue,

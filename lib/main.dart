@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:al_quran/select.dart';
+import 'surahMenu.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,11 +9,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Al-Qur'an",
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Select(),
-    );
+        title: "Al-Qur'an",
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: Select());
   }
 }
